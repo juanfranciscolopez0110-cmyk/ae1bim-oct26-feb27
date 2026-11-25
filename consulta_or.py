@@ -11,7 +11,7 @@ for c in session.query(Clinica).filter(
 
 print("\n=== Consultorios de Cirugía O Dermatología ===")
 for c in session.query(Consultorio).filter(
-        or_(Consultorio.especialidad == "Cirugía", Consultorio.especialidad == "Dermatología")):
+        or_(Consultorio.especialidad == "Cirugía", Consultorio.especialidad.like("%Dermatolog%"))):
     print(c)
 
 print("\n=== Veterinarios con apellido 'Vera' O 'Castillo' ===")
